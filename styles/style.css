@@ -1,0 +1,12 @@
+body {
+  padding: 10px;
+}
+
+.nav-item {
+  display: inline;
+}
+
+.nav-item a {
+  padding: 8px;
+  background-color: #dddddd;
+}
