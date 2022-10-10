@@ -1,28 +1,52 @@
-const dummyDataDariAPI = [
-  {
-    judul: 'Film Tentang Foo',
-    deskripsi: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit.'
-  },
-  {
-    judul: 'Film Tentang Bar',
-    deskripsi: 'Accusantium temporibus nam dicta modi culpa veritatis ad deserunt quas itaque tempore iure perferendis rem perspiciatis quod, maxime quos.'
-  },
-  {
-    judul: 'Film Tentang Baz',
-    deskripsi: 'Libero, ex enim.'
-  }
-];
+const apiKey = '339f18bb88e49509ba211e440d6e6260';
+const url = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&sort_by=popularity.desc`;
 
 const contentContainer = document.getElementById('content');
 
-dummyDataDariAPI.forEach(function (data) {
-  const div = document.createElement('div');
+// function main() {
+//   fetch(url)
+//     .then(function (response) {
+//       response.json()
+//         .then(function (result) {
+//           console.log(result.results);
+//           const data = result.results;
 
-  div.classList.add('box');
-  div.innerHTML = `
-    <h3>${data.judul}</h3>
-    <p>${data.deskripsi}</p>
-  `;
+//           data.forEach(function (movie) {
+//             const div = document.createElement('div');
+          
+//             div.classList.add('box');
+//             div.innerHTML = `
+//               <h3>${movie.title}</h3>
+//               <p>${movie.overview}</p>
+//               <p>${movie.release_date}</p>
+//             `;
+            
+//             contentContainer.appendChild(div);
+//           });
+//         })
+//     })
+// }
+
+// main();
+
+async function main() {
+  const response = await fetch(url);
+  const result = await response.json();
+
+  const data = result.results;
+
+  data.forEach(function (movie) {
+    const div = document.createElement('div');
   
-  contentContainer.appendChild(div);
-});
+    div.classList.add('box');
+    div.innerHTML = `
+      <h3>${movie.title}</h3>
+      <p>${movie.overview}</p>
+      <p>${movie.release_date}</p>
+    `;
+    
+    contentContainer.appendChild(div);
+  });
+}
+
+main();
