@@ -33,12 +33,15 @@ const contentContainer = document.getElementById('content');
 
 // main();
 
-document.getElementById('search').addEventListener('click', search);
+document.getElementById('searchInput').addEventListener('input', search);
 
 async function search() {
-  const searchValue = document.getElementById('searchForm').value;
+  // e.preventDefault();
+  const searchValue = document.getElementById('searchInput').value;
 
-  if (searchValue !== '' || searchValue !== ' ') {
+  console.log(searchValue);
+  if (!searchValue || searchValue !== '' || searchValue !== ' ') {
+    console.log('here')
     const response = await fetch(getUrlSearch(searchValue));
     const result = await response.json();
   
