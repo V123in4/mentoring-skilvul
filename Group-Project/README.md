@@ -30,7 +30,9 @@
 9. buatlah file `article-detail.html` yg mana nantinya file tsb berisi sebuah title dan content dari article yang dipilih (tombol detail nya di klik)
 10. `article-detail.html` mempunyai javascript file untuk melakukan handle fetch/request ke endpoint MockAPI, file js tersebut dinamakan  `article-detail.js`
 11. file `article-detail.js` tersebut, akan melakukan fetch/request ke endpoint MockAPI `article/:id`
-12. kembalian dari endppoint tsb adalah sebuah object yang mewakili article tertentu
+12. file `article-detail.js` tersebut juga akan membaca data query parameter yang ada di url tersebut: `blabla.html?id=3`
+13. value dari `id` tsb akan dimasukkan ke dalam sebuah variable yang mana variable tersebut nantinya akan berguna untuk melakukan fetch/request ke endpoint mockapi `article/:id`
+14. kembalian dari endppoint tsb adalah sebuah object yang mewakili article tertentu
 ```json
 {
   "title": "title 3",
@@ -38,4 +40,4 @@
   "id": "3"
 }
 ```
-13. kembalian dari endppoint tsb akan dipakai untuk dituliskan di bagian `judul` dan `content` pd html nya
+15. kembalian dari endppoint tsb akan dipakai untuk dituliskan di bagian `judul` dan `content` pd html nya
