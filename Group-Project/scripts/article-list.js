@@ -18,18 +18,18 @@ getMockApi(`${url}/article`)
         <div class="box">
           <h3>${article.title}</h3>
           <p>${article.content}</p>
-          <a href="#" class="lihatDetail" data-id="${article.id}">Detail</a>
+          <a href="article-detail.html?id=${article.id}">Detail</a>
         </div>`
     });
 
-    const lihatDetail = document.getElementsByClassName('lihatDetail');
+    // const lihatDetail = document.getElementsByClassName('lihatDetail');
 
-    Array.from(lihatDetail).forEach(function (anchorLihatDetail) {
-      anchorLihatDetail.addEventListener('click', function (e) {
-        e.preventDefault();
-        const id = e.target.dataset.id;
+    // Array.from(lihatDetail).forEach(function (anchorLihatDetail) {
+    //   anchorLihatDetail.addEventListener('click', function (e) {
+    //     e.preventDefault();
+    //     const id = e.target.dataset.id;
         
-        window.location = `article-detail.html?id=${id}`;
-      });
-    });
+    //     window.location = `article-detail.html?id=${id}`;
+    //   });
+    // });
   });
