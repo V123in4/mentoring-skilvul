@@ -21,15 +21,4 @@ getMockApi(`${url}/article`)
           <a href="article-detail.html?id=${article.id}">Detail</a>
         </div>`
     });
-
-    // const lihatDetail = document.getElementsByClassName('lihatDetail');
-
-    // Array.from(lihatDetail).forEach(function (anchorLihatDetail) {
-    //   anchorLihatDetail.addEventListener('click', function (e) {
-    //     e.preventDefault();
-    //     const id = e.target.dataset.id;
-        
-    //     window.location = `article-detail.html?id=${id}`;
-    //   });
-    // });
   });
