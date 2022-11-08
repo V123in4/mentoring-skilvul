@@ -6,8 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Article List</title>
   <link rel="stylesheet" href="styles/article-list.css">
+  <style>
+    body {
+      background-color: black;
+    }
+  </style>
 </head>
 <body>
+  <img id="imageGoogle" alt="google image">
   <a href="index.html">Back</a>
   <h1>Articles</h1>
   <div id="container">
@@ -15,5 +21,9 @@
   </div>
 
   <script src="scripts/article-list.js"></script>
+  <script>
+    const img = document.getElementById('imageGoogle')
+    img.src = 'https://www.google.com/images/branding/googlelogo/1x/googlelogo_light_color_272x92dp.png'
+  </script>
 </body>
 </html>
